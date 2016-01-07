@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="153.0" prefWidth="356.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fast.MainFrameController">
+   <children>
+      <Label layoutX="26.0" layoutY="14.0" prefHeight="82.0" prefWidth="305.0" text="FastRead is helping application intended to increase your reading speed, to reach higher levels quickly" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="doneBtn" layoutX="153.0" layoutY="115.0" mnemonicParsing="false" onAction="#doDone" text="Done" />
+   </children>
+</AnchorPane>

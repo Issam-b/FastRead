@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane prefHeight="151.0" prefWidth="386.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fast.ReadFrameController">
+   <columnConstraints>
+      <ColumnConstraints maxWidth="93.0" minWidth="10.0" prefWidth="71.0" />
+      <ColumnConstraints maxWidth="80.0" minWidth="10.0" prefWidth="78.0" />
+      <ColumnConstraints maxWidth="140.0" minWidth="45.0" prefWidth="54.0" />
+      <ColumnConstraints maxWidth="147.0" minWidth="46.0" prefWidth="83.0" />
+      <ColumnConstraints maxWidth="127.0" minWidth="10.0" prefWidth="101.0" />
+      <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="42.0" minHeight="8.0" prefHeight="8.0" />
+      <RowConstraints maxHeight="64.0" minHeight="0.0" prefHeight="33.0" />
+      <RowConstraints maxHeight="48.0" minHeight="0.0" prefHeight="31.0" />
+      <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="31.0" />
+      <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="45.0" />
+      <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="12.0" />
+   </rowConstraints>
+   <children>
+      <Label fx:id="readLabel" contentDisplay="CENTER" prefHeight="56.0" prefWidth="214.0" text="ReadLabel" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1" GridPane.rowSpan="2">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="pauseBtn" mnemonicParsing="false" onAction="#doPause" prefHeight="35.0" prefWidth="52.0" text="Pause" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+   </children>
+</GridPane>
