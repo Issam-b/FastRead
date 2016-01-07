@@ -1,0 +1,5 @@
+TODO list:
+- Include statistics about text like word & paragraph count and remaing count.
+- Time reamained to finish the text.
+- Adding some CSS styles to make it look fancy and easy for eyes to read. 
+- Fix bug: unexpectedly the read window shows after two consecutive clicks even the below condition is not true.
