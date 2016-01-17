@@ -1,5 +1,16 @@
+<<<<<<< HEAD
+-TODO list:
+-- Include statistics about text paragraph count.
+-- Adding some CSS styles to make it look fancy and easy for eyes to read.
+-
+-Fix bug:
+-- added word count and remained time statistics.
+-- added a msgDialog to inform user that there's not text or no session to resume.
+-- unexpectedly the read window shows after two consecutive clicks even the below condition is not true.
+=======
 TODO list:
 - Include statistics about text like word & paragraph count and remaing count.
 - Time reamained to finish the text.
 - Adding some CSS styles to make it look fancy and easy for eyes to read. 
 - Fix bug: unexpectedly the read window shows after two consecutive clicks even the below condition is not true.
+>>>>>>> parent of d27a40e... new statistics added
