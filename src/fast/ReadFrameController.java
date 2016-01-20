@@ -18,6 +18,8 @@ import javafx.stage.Stage;
 public class ReadFrameController implements Initializable {
 
     @FXML private Label readLabel;
+    @FXML private Label wordsLabel,paragLabel,timeLabel;
+    
     Stage stage;
     
     public ReadFrameController() {
@@ -34,7 +36,8 @@ public class ReadFrameController implements Initializable {
     }
     
     @FXML
-    private void doPause(ActionEvent event) {        
+    private void doPause(ActionEvent event) {   
+        
         MainFrameController.th.stop();
         ((Node)(event.getSource())).getScene().getWindow().hide();
     }
@@ -47,4 +50,15 @@ public class ReadFrameController implements Initializable {
         return this.readLabel;
     }
     
+    public Label getWordsLabel() {
+        return wordsLabel;
+    }
+
+    public Label getParagLabel() {
+        return paragLabel;
+    }
+
+    public Label getTimeRemain() {
+        return timeLabel;
+    }
 }
