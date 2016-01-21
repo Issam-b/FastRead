@@ -19,6 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.TextAlignment;
@@ -37,6 +38,7 @@ public class MainFrameController implements Initializable {
     @FXML public TextArea textArea;
     @FXML private Button doneBtn;
     @FXML private Slider slider;
+    @FXML private TextField speedText;
     
     Stage stage;
     Stage dialog;
@@ -55,7 +57,7 @@ public class MainFrameController implements Initializable {
     }    
     
     @FXML
-    private void doStart(ActionEvent event) throws IOException {
+    public void doStart() throws IOException {
         if(textArea.getText().equalsIgnoreCase("")) {
             showDialog("There is no valid text in the text field\n"
                             + "Please enter some text !");
@@ -67,17 +69,13 @@ public class MainFrameController implements Initializable {
     }
    
     @FXML
-    private void doResume(ActionEvent event) throws IOException {
+    public void doResume() throws IOException {
         String[] words = getText();
 
         if(textArea.getText().equalsIgnoreCase("") || getReadPos() != (words.length - 1)) {
             showDialog("There is no previous paused reading to resume on !");
         }
-        else {
-        
-            // TODO: unexpectedly the read window shows after two consecutive 
-            // clicks even the below condition is not true
-        
+        else {               
             buildReadScene("ReadFrame.fxml");
             
             if(getReadPos() <= 2)
@@ -88,15 +86,16 @@ public class MainFrameController implements Initializable {
     }
     
     @FXML
-    private void doExit(ActionEvent event) {
+    public void doExit() {
         System.exit(0);
     }
     @FXML
-    private void doClear(ActionEvent event) {
+    public void doClear() {
         textArea.setText("");
     }
+    
     @FXML
-    private void doAbout(ActionEvent event) throws IOException {
+    public void doAbout() throws IOException {
         stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("About.fxml"));
         Parent roott = (Parent)loader.load();
@@ -104,11 +103,12 @@ public class MainFrameController implements Initializable {
         stage.setScene(new Scene(roott));
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(textArea.getScene().getWindow());
+        stage.setResizable(false);
         stage.setTitle("About FastRead");
         stage.show();
     }
     @FXML
-    private void doDone(ActionEvent event) {
+    public void doDone() {
         stage = (Stage) doneBtn.getScene().getWindow();
         stage.close();
     }
@@ -122,6 +122,7 @@ public class MainFrameController implements Initializable {
         stage.setScene(new Scene(roott));
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(textArea.getScene().getWindow());
+        stage.setResizable(false);
         stage.setTitle("FastRead: Reading now ...");
         stage.show();
     }
@@ -198,20 +199,19 @@ public class MainFrameController implements Initializable {
 
     public static void setTimeRemained(long timeRemained) {
         MainFrameController.timeRemained = timeRemained;
-    }
-    
+    }    
 }
 
-class Dialog extends Stage {
-    // TODO add a gray layer
+class Dialog extends Stage {    
     public Dialog(Stage owner, boolean modality, String title, String msg) {
         super();
         initOwner(owner);
         Modality m = modality ? Modality.APPLICATION_MODAL : Modality.NONE;
         initModality(m);
-        setTitle(title);
+        setResizable(false);
+        setTitle(title);        
         Group root = new Group();
-        Scene scene = new Scene(root, 265, 150, Color.WHITE);
+        Scene scene = new Scene(root, Color.GHOSTWHITE);
         setScene(scene);
         
         GridPane gridpane = new GridPane();
@@ -220,10 +220,11 @@ class Dialog extends Stage {
         gridpane.setVgap(5);
         
         Label msgLabel = new Label(msg);
-        msgLabel.setTextAlignment(TextAlignment.CENTER);
+        msgLabel.setWrapText(true);
+        msgLabel.setMaxWidth(300);
+        msgLabel.setTextAlignment(TextAlignment.CENTER);        
         gridpane.add(msgLabel, 0, 3);
-        GridPane.setHalignment(msgLabel, HPos.CENTER);
-        
+        GridPane.setHalignment(msgLabel, HPos.CENTER);               
         Button OkButton = new Button("OK !");
         OkButton.setOnAction((ActionEvent event) -> {
             close();

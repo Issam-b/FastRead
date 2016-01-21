@@ -36,7 +36,7 @@ public class ReadFrameController implements Initializable {
     }
     
     @FXML
-    private void doPause(ActionEvent event) {   
+    public void doPause(ActionEvent event) {   
         
         MainFrameController.th.stop();
         ((Node)(event.getSource())).getScene().getWindow().hide();

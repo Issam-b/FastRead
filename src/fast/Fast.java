@@ -20,6 +20,7 @@ public class Fast extends Application {
         
         stage.setScene(scene);
         stage.setTitle("FastRead");
+        stage.setResizable(false);
         stage.show();
     }
 

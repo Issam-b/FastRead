@@ -1,7 +1,10 @@
 TODO list:
 - Include statistics about text paragraph count.
 - Adding some CSS styles to make it look fancy and easy for eyes to read.
+
 Fix bug:
 - added word count and remained time statistics.
-- added a msgDialog to inform user that there's no text or no session to resume.
+
+Fixed:
 - unexpectedly the read window shows after two consecutive clicks even the below condition is not true.
+- added a msgDialog to inform user that there's no text or no session to resume.
