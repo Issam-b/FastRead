@@ -6,36 +6,23 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Platform;
-<<<<<<< HEAD
-=======
-import javafx.concurrent.Task;
->>>>>>> b9da71c0586412a33cb811e29821da7baba98829
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-<<<<<<< HEAD
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
-=======
->>>>>>> b9da71c0586412a33cb811e29821da7baba98829
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-<<<<<<< HEAD
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.TextAlignment;
-=======
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextArea;
->>>>>>> b9da71c0586412a33cb811e29821da7baba98829
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -45,7 +32,6 @@ import javafx.stage.Stage;
  */
 public class MainFrameController implements Initializable {
     
-<<<<<<< HEAD
     // TODO include statistics about text like paragraph count
     // Adding some CSS styles to make it look fancy and easy for eyes to read.
     
@@ -66,26 +52,11 @@ public class MainFrameController implements Initializable {
     static boolean once = false;
     public static Thread th;
    
-=======
-    @FXML public TextArea textArea;
-    @FXML private Button doneBtn;
-    @FXML private Slider slider;    
-    
-    Stage stage;
-    Parent root;   
-    
-    ReadFrameController rc;
-    static int i;
-    static boolean once = false;
-    public static Thread th;
-    
->>>>>>> b9da71c0586412a33cb811e29821da7baba98829
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }    
     
     @FXML
-<<<<<<< HEAD
     public void doStart() throws IOException {
         if(textArea.getText().equalsIgnoreCase("")) {
             showDialog("There is no valid text in the text field\n"
@@ -125,43 +96,6 @@ public class MainFrameController implements Initializable {
     
     @FXML
     public void doAbout() throws IOException {
-=======
-    private void doStart(ActionEvent event) throws IOException {
-        buildReadScene("ReadFrame.fxml");
-        ReadThread(getText(), getSpeed());
-    }
-   
-    @FXML
-    private void doResume(ActionEvent event) throws IOException {
-        //TODO
-        System.out.println("sdf");
-        if(rc.getPause()){
-            buildReadScene("ReadFrame.fxml");
-            
-            String[] temp = getText();
-            int length = temp.length - MainFrameController.i;
-//            length -= MainFrameController.i;
-            String[] words_resume = new String[length];
-            for (int j = 0; j < length; j++) {
-                words_resume[j] = temp[j + MainFrameController.i];
-            }
-            ReadThread(words_resume, getSpeed());
-//            MainFrameController.i = 0;
-        }
-        
-    }
-    
-    @FXML
-    private void doExit(ActionEvent event) {
-        System.exit(0);
-    }
-    @FXML
-    private void doClear(ActionEvent event) {
-        textArea.setText("");
-    }
-    @FXML
-    private void doAbout(ActionEvent event) throws IOException {
->>>>>>> b9da71c0586412a33cb811e29821da7baba98829
         stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("About.fxml"));
         Parent roott = (Parent)loader.load();
@@ -169,19 +103,12 @@ public class MainFrameController implements Initializable {
         stage.setScene(new Scene(roott));
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(textArea.getScene().getWindow());
-<<<<<<< HEAD
         stage.setResizable(false);
         stage.setTitle("About FastRead");
         stage.show();
     }
     @FXML
     public void doDone() {
-=======
-        stage.show();
-    }
-    @FXML
-    private void doDone(ActionEvent event) {
->>>>>>> b9da71c0586412a33cb811e29821da7baba98829
         stage = (Stage) doneBtn.getScene().getWindow();
         stage.close();
     }
@@ -189,17 +116,12 @@ public class MainFrameController implements Initializable {
     private void buildReadScene(String fxmlFile) throws IOException {
         stage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
-<<<<<<< HEAD
         Parent roott = (Parent)loader.load();       
-=======
-        Parent roott = (Parent)loader.load();        
->>>>>>> b9da71c0586412a33cb811e29821da7baba98829
         rc = loader.<ReadFrameController>getController();
 
         stage.setScene(new Scene(roott));
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initOwner(textArea.getScene().getWindow());
-<<<<<<< HEAD
         stage.setResizable(false);
         stage.setTitle("FastRead: Reading now ...");
         stage.show();
@@ -217,20 +139,6 @@ public class MainFrameController implements Initializable {
                     rc.getWordsLabel().setText((getReadPos() + 1) + " / " + getWordsCount());
                     rc.getParagLabel().setText("on work ...");
                     rc.getTimeRemain().setText(displayTime());
-=======
-        stage.show();
-    }
-    
-//    static int J = 0;
-    private void ReadThread(String[] words, long speed) {
-        th = new Thread(() -> {
-            for (int j = 0; j < words.length; j++) {
-                MainFrameController.i = j;
-                Platform.runLater(() -> {
-                    rc.getReadLabel().setText(words[i]);
-                        
-
->>>>>>> b9da71c0586412a33cb811e29821da7baba98829
                 });
                 
                 try {
@@ -240,7 +148,6 @@ public class MainFrameController implements Initializable {
                 }
             }
         });
-<<<<<<< HEAD
         th.setDaemon(true);
         th.start();
     }
@@ -257,11 +164,6 @@ public class MainFrameController implements Initializable {
         return remain + " s / " + total + " s";
     }
     
-=======
-        th.start();
-    }
-    
->>>>>>> b9da71c0586412a33cb811e29821da7baba98829
     public String[] getText() {
         String text = textArea.getText();
         return text.split(" ");
@@ -275,7 +177,6 @@ public class MainFrameController implements Initializable {
         MainFrameController.once = once;
     }
     
-<<<<<<< HEAD
     public static int getReadPos() {
         return readPos;
     }
@@ -333,6 +234,4 @@ class Dialog extends Stage {
         GridPane.setHalignment(OkButton, HPos.CENTER);
         root.getChildren().add(gridpane);
     }
-=======
->>>>>>> b9da71c0586412a33cb811e29821da7baba98829
 }

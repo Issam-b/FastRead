@@ -19,11 +19,8 @@ public class Fast extends Application {
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
-<<<<<<< HEAD
         stage.setTitle("FastRead");
         stage.setResizable(false);
-=======
->>>>>>> b9da71c0586412a33cb811e29821da7baba98829
         stage.show();
     }
 
