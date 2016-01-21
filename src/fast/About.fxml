@@ -7,6 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<<<<<<< HEAD
 <AnchorPane id="AnchorPane" prefHeight="185.0" prefWidth="356.0" xmlns="http://javafx.com/javafx/8.0.66" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fast.MainFrameController">
    <children>
       <Label layoutX="27.0" layoutY="3.0" prefHeight="75.0" prefWidth="305.0" text="FastRead is helping application intended to increase your reading speed, to reach higher levels quickly" textAlignment="CENTER" wrapText="true">
@@ -21,9 +22,18 @@
          </font>
       </Label>
       <Label layoutX="86.0" layoutY="104.0" prefHeight="36.0" prefWidth="185.0" text="&lt; assam.bj@gmail.com &gt;" textAlignment="CENTER" wrapText="true">
+=======
+<AnchorPane id="AnchorPane" prefHeight="153.0" prefWidth="356.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fast.MainFrameController">
+   <children>
+      <Label layoutX="26.0" layoutY="14.0" prefHeight="82.0" prefWidth="305.0" text="FastRead is helping application intended to increase your reading speed, to reach higher levels quickly" textAlignment="CENTER" wrapText="true">
+>>>>>>> b9da71c0586412a33cb811e29821da7baba98829
          <font>
             <Font size="14.0" />
          </font>
       </Label>
+<<<<<<< HEAD
+=======
+      <Button fx:id="doneBtn" layoutX="153.0" layoutY="115.0" mnemonicParsing="false" onAction="#doDone" text="Done" />
+>>>>>>> b9da71c0586412a33cb811e29821da7baba98829
    </children>
 </AnchorPane>

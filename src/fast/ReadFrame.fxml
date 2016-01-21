@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<<<<<<< HEAD
 <?import javafx.geometry.*?>
+=======
+>>>>>>> b9da71c0586412a33cb811e29821da7baba98829
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -8,6 +11,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<<<<<<< HEAD
 <GridPane prefHeight="191.0" prefWidth="386.0" xmlns="http://javafx.com/javafx/8.0.66" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fast.ReadFrameController">
    <columnConstraints>
       <ColumnConstraints maxWidth="96.0" minWidth="10.0" prefWidth="80.0" />
@@ -15,6 +19,15 @@
       <ColumnConstraints maxWidth="140.0" minWidth="45.0" prefWidth="74.0" />
       <ColumnConstraints maxWidth="147.0" minWidth="46.0" prefWidth="84.0" />
       <ColumnConstraints maxWidth="127.0" minWidth="10.0" prefWidth="69.0" />
+=======
+<GridPane prefHeight="151.0" prefWidth="386.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fast.ReadFrameController">
+   <columnConstraints>
+      <ColumnConstraints maxWidth="93.0" minWidth="10.0" prefWidth="71.0" />
+      <ColumnConstraints maxWidth="80.0" minWidth="10.0" prefWidth="78.0" />
+      <ColumnConstraints maxWidth="140.0" minWidth="45.0" prefWidth="54.0" />
+      <ColumnConstraints maxWidth="147.0" minWidth="46.0" prefWidth="83.0" />
+      <ColumnConstraints maxWidth="127.0" minWidth="10.0" prefWidth="101.0" />
+>>>>>>> b9da71c0586412a33cb811e29821da7baba98829
       <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
    </columnConstraints>
    <rowConstraints>
@@ -22,6 +35,7 @@
       <RowConstraints maxHeight="64.0" minHeight="0.0" prefHeight="33.0" />
       <RowConstraints maxHeight="48.0" minHeight="0.0" prefHeight="31.0" />
       <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="31.0" />
+<<<<<<< HEAD
       <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="50.0" />
       <RowConstraints maxHeight="48.0" minHeight="0.0" prefHeight="28.0" />
       <RowConstraints maxHeight="48.0" minHeight="7.0" prefHeight="9.0" />
@@ -40,5 +54,17 @@
          </opaqueInsets>
       </Label>
       <Label fx:id="timeLabel" prefHeight="24.0" prefWidth="84.0" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+=======
+      <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="45.0" />
+      <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="12.0" />
+   </rowConstraints>
+   <children>
+      <Label fx:id="readLabel" contentDisplay="CENTER" prefHeight="56.0" prefWidth="214.0" text="ReadLabel" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1" GridPane.rowSpan="2">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="pauseBtn" mnemonicParsing="false" onAction="#doPause" prefHeight="35.0" prefWidth="52.0" text="Pause" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+>>>>>>> b9da71c0586412a33cb811e29821da7baba98829
    </children>
 </GridPane>
